@@ -2,6 +2,7 @@
   "name": "3dui",
   "version": "0.1.0",
   "private": true,
+  "homepage":"https://github.com/andrewfu/3dui",
   "dependencies": {
     "@babylonjs/core": "^4.1.0",
     "@babylonjs/gui": "^4.1.0",
