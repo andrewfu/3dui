@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.js": "/andrewfu/3dui/static/js/main.561e1151.chunk.js",
-    "main.js.map": "/andrewfu/3dui/static/js/main.561e1151.chunk.js.map",
-    "runtime-main.js": "/andrewfu/3dui/static/js/runtime-main.08fec15b.js",
-    "runtime-main.js.map": "/andrewfu/3dui/static/js/runtime-main.08fec15b.js.map",
-    "static/js/2.4507ff91.chunk.js": "/andrewfu/3dui/static/js/2.4507ff91.chunk.js",
-    "static/js/2.4507ff91.chunk.js.map": "/andrewfu/3dui/static/js/2.4507ff91.chunk.js.map",
-    "index.html": "/andrewfu/3dui/index.html",
-    "precache-manifest.e1d0439f125e67dc920564b24c90bb2e.js": "/andrewfu/3dui/precache-manifest.e1d0439f125e67dc920564b24c90bb2e.js",
-    "service-worker.js": "/andrewfu/3dui/service-worker.js",
-    "static/js/2.4507ff91.chunk.js.LICENSE.txt": "/andrewfu/3dui/static/js/2.4507ff91.chunk.js.LICENSE.txt"
+    "main.js": "/3dui/static/js/main.561e1151.chunk.js",
+    "main.js.map": "/3dui/static/js/main.561e1151.chunk.js.map",
+    "runtime-main.js": "/3dui/static/js/runtime-main.47280775.js",
+    "runtime-main.js.map": "/3dui/static/js/runtime-main.47280775.js.map",
+    "static/js/2.4507ff91.chunk.js": "/3dui/static/js/2.4507ff91.chunk.js",
+    "static/js/2.4507ff91.chunk.js.map": "/3dui/static/js/2.4507ff91.chunk.js.map",
+    "index.html": "/3dui/index.html",
+    "precache-manifest.12b5a4f56e41b55f128254a2f8cf2b47.js": "/3dui/precache-manifest.12b5a4f56e41b55f128254a2f8cf2b47.js",
+    "service-worker.js": "/3dui/service-worker.js",
+    "static/js/2.4507ff91.chunk.js.LICENSE.txt": "/3dui/static/js/2.4507ff91.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.08fec15b.js",
+    "static/js/runtime-main.47280775.js",
     "static/js/2.4507ff91.chunk.js",
     "static/js/main.561e1151.chunk.js"
   ]
