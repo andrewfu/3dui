@@ -1,15 +1,14 @@
 import { connect } from "react-redux";
 import Startup from "./startup";
 import { bindActionCreators } from "redux";
-import { GetSite } from "../../actions/site";
+import { GetLists } from "../../actions/site";
 
-const mapDispatchToProps = (dispatch) => bindActionCreators({ GetSite }, dispatch);
+const mapDispatchToProps = (dispatch) => bindActionCreators({ GetLists }, dispatch);
 
 const mapStateToProps = (state) => {
   return {
-    siteTitle: state.site.title,
-    sitefetching: state.site.sitefetching,
-    sitefetched: state.site.sitefetched,
+    listsfetching: state.site.listsfetching,
+    listsfetched: state.site.listsfetched,
   };
 };
 

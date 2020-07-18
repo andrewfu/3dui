@@ -1,3 +1,5 @@
+export const GetRandomInt = (seed) => Math.ceil(Math.random() * seed);
+
 export const Fetch = ({ type, ServiceAction }) => {
   return async (dispatch, getState) => {
     dispatch({ type });
