@@ -26,7 +26,7 @@ const CreateLine = (ui) => {
   return line;
 };
 
-export default (scene) => {
+export default (scene, meta) => {
   var ui = AdvancedDynamicTexture.CreateFullscreenUI("UI");
   const btn1 = CreateBottomPanel(ui);
   const line = CreateLine(ui);
@@ -36,8 +36,9 @@ export default (scene) => {
     if (pointerInfo.type == PointerEventTypes.POINTERMOVE) {
       const mesh = RayCast(scene);
       if (mesh) {
-        const length = Math.ceil(mesh.position.subtract(scene.cameras[0].position).length());
-        btn1.text = `${mesh.name}-${length}`;
+        //const length = Math.ceil(mesh.position.subtract(scene.cameras[0].position).length());
+        const objMeta = meta.find((i) => mesh.name == i.id);
+        btn1.text = objMeta.title;
         line.linkWithMesh(mesh);
         line.isVisible = true;
       } else {

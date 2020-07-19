@@ -3,21 +3,22 @@ import { Vector3, Color4 } from "@babylonjs/core";
 
 export default ({
   baseMeshes,
-  count = GetRandomInt(100),
+  objects = [],
   xDim = GetRandomInt(10),
   yDim = GetRandomInt(10),
-  scale = 10,
-  maxSize = 3,
+  distance = 20,
+  maxSize = 5,
 }) => {
-  for (let i = 0; i < count; i++) {
-    let instance = baseMeshes[0].createInstance(`${baseMeshes[0].name}${i}`);
+  const maxItemsCount = Math.max(...objects.map((i) => i.count));
+  for (let i = 0; i < objects.length; i++) {
+    let instance = baseMeshes[0].createInstance(objects[i].id);
     const x = i % xDim;
     const y = ((i - x) / xDim) % yDim;
     const z = ((i - x) / xDim - y) / yDim;
-    instance.position.x = x * scale;
-    instance.position.y = y * scale;
-    instance.position.z = z * scale;
-    const s = GetRandomInt(maxSize);
+    instance.position.x = x * distance;
+    instance.position.y = y * distance;
+    instance.position.z = z * distance;
+    const s = Math.ceil((objects[i].count / maxItemsCount) * maxSize);
     instance.scaling = new Vector3(s, s, s);
     instance.instancedBuffers.color = new Color4(
       Math.random(),

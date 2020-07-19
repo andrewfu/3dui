@@ -1,6 +1,5 @@
 import React from "react";
 import SceneComponent from "babylonjs-hook";
-import { Color4 } from "@babylonjs/core";
 
 import Prepare from "./prepare";
 import CreateSkybox from "./skybox";
@@ -10,17 +9,17 @@ import CreateVolume from "./volume";
 import SetupPointerLock from "./pointer-lock";
 
 let baseMeshes = null;
-let activeInstance = null;
+let meta = null;
 
-const Ready = (scene, lists) => {
+const Ready = (scene) => {
   const { camera, startCameraPos } = Prepare(scene);
   CreateSkybox(scene);
-  CreateFullSceenUI(scene);
+  CreateFullSceenUI(scene, meta);
   baseMeshes = CreateBaseMeshes();
 
-  CreateVolume({ baseMeshes, count: lists.length, xDim: 3, yDim: 3 });
+  CreateVolume({ baseMeshes, objects: meta, xDim: 3, yDim: 3 });
 
-  SetupPointerLock(scene);
+  //SetupPointerLock(scene);
 
   /*scene.onPointerDown = () => {
     if (!isLocked) {
@@ -51,6 +50,7 @@ const Ready = (scene, lists) => {
 const Render = (scene) => {};
 
 const Scene3 = ({ lists }) => {
+  meta = lists;
   return (
     <SceneComponent
       antialias
