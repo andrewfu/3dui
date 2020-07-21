@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 
+import * as micOn from "../../../textures/microphone.png";
+
 const SVG = styled.svg`
   cursor: pointer;
   text:hover {
@@ -17,7 +19,6 @@ const SVG = styled.svg`
 `;
 
 const ICON = styled.text`
-  font-family: "Font Awesome 5 Free";
   cursor: pointer;
   font-size: 25px;
 `;
@@ -31,13 +32,13 @@ const SPeechControl = ({ start, TurnSpeech }) => {
     <SVG
       top={`${window.innerHeight - 180}px`}
       left="20px"
-      height="40px"
-      width="40px"
+      height="44px"
+      width="44px"
       onClick={() => TurnSpeech(!start)}
     >
-      <CIRCLE cx="50%" cy="50%" r="20" />
+      <CIRCLE cx="50%" cy="50%" r="22" />
       <ICON textAnchor="middle" x="50%" y="70%">
-        {start ? unescape(`%uf130`) : unescape(`%uf131`)}
+        {start ? "On" : "Off"}
       </ICON>
     </SVG>
   );

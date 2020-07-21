@@ -18,7 +18,8 @@ export default ({
     instance.position.x = x * distance;
     instance.position.y = y * distance;
     instance.position.z = z * distance;
-    const s = Math.ceil((objects[i].count / maxItemsCount) * maxSize);
+    let s = Math.ceil((objects[i].count / maxItemsCount) * maxSize);
+    s = s == 0 ? 1 : s;
     instance.scaling = new Vector3(s, s, s);
     instance.instancedBuffers.color = new Color4(
       Math.random(),

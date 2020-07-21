@@ -1,11 +1,11 @@
 import { MeshBuilder, Color4, DynamicTexture, StandardMaterial, Mesh } from "@babylonjs/core";
-import { COLOR_BUFFER, BASE_CUBE } from "../../utl/const";
+import { COLOR_BUFFER, BASE_CUBE, BASE_SPHERE } from "../../utl/const";
 
 //import folder from "../../textures/folder.png";
 
 export default () => {
   const baseMeshes = [];
-  let obj = MeshBuilder.CreateSphere(BASE_CUBE, { segments: 16, diameter: 2 });
+  let obj = MeshBuilder.CreateSphere(BASE_SPHERE, { segments: 16, diameter: 2 });
   //obj.billboardMode = Mesh.BILLBOARDMODE_ALL;
 
   /*var size = 512;

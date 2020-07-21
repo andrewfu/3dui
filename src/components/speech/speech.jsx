@@ -1,28 +1,26 @@
 import React, { useState, useEffect } from "react";
-import SpeechRecognition from "react-speech-recognition";
+import SpeechRecognition, { useSpeechRecognition } from "react-speech-recognition";
 import SpeechControl from "./speech-control";
 
-const Speech = ({ transcript, startListening, stopListening, GetCommand }) => {
+const Speech = ({ GetCommand }) => {
   const [start, SetStart] = useState(false);
+  const { transcript, startListening, stopListening } = useSpeechRecognition();
   useEffect(() => {
-    if (start) startListening();
+    if (start) SpeechRecognition.startListening({ language: "en-US" });
     else {
-      stopListening();
+      SpeechRecognition.stopListening();
     }
   }, [start]);
 
   useEffect(() => {
-    setTimeout(() => {}, 1000);
     if (transcript) {
       console.log(transcript);
-      if (Number.isInteger(parseInt(transcript))) {
-        GetCommand(transcript);
-        SetStart(false);
-      }
+      GetCommand(transcript);
+      SetStart(false);
     }
   }, [transcript]);
 
   return <SpeechControl start={start} TurnSpeech={(value) => SetStart(value)} />;
 };
 
-export default SpeechRecognition({ continuous: false })(Speech);
+export default Speech;
